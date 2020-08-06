@@ -1,0 +1,680 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Note.js component //////////////////////////////////////////////////*/
+.note {
+  background-color: #f9f8f8;
+  padding: 6px;
+  cursor: default;
+  outline: none;
+  position: relative;
+  margin: 5px 5px 0px 5px;
+  margin: 4px 4px 0px 4px;
+  width: 352px;
+  height: 150px;
+  overflow: scroll;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.note:focus,
+.note:hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+}
+.note:focus svg,
+.note:hover svg {
+  opacity: 0.75;
+}
+.note h1 {
+  font-size: 18px;
+}
+.note .empty {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  font-family: Product Sans, system, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, Segoe UI, Arial, sans-serif;
+}
+.edit-note svg {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.pretty-tags {
+  font-weight: 600;
+}
+.delete-button {
+  background: inherit;
+}
+.delete-button svg {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* TagsInput Component  //////////////////////////////////////////// */
+.tag-input-div {
+  background: white;
+  padding: 0px 0 8px 0;
+  /* margin: 15px 0 15px 0; */
+}
+
+#tag-input {
+  background: white;
+  margin: 0;
+}
+
+.tags-div {
+  /* background: white; */
+  padding: 0 0 7px 0;
+  border-radius: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Header.js component */
+header h1 {
+  text-align: center;
+  color: #3d3b37;
+  color: #5e352b;
+  margin-bottom: 0px;
+  font-size: 3.4em;
+}
+
+/* Notes Component ////////////////////////////////////////////// */
+.notes {
+  list-style: none;
+  /* max-height: 658px; */
+  height: 75vh;
+  padding: 26px;
+  margin: 0 auto;
+  border-radius: 1px;
+  overflow: scroll;
+  width: 1092px;
+  background: #d7d2cd;
+  background: #5e352b;
+  border-bottom: solid #5e352b 10px;
+  /* border-top: solid #5e352b 10px; */
+}
+
+/* .backdrop {
+  position: fixed;
+  z-index: 9;
+} */
+
+/* TagCloud component////////////////////////////////////////////// */
+.cloud-tag {
+  padding: 0px 6px 0px 6px;
+  background: #857c7b;
+  margin: 0 3px 3px 0;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.tag-cloud-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 0px;
+}
+
+/* NewNoteButton component //////////////////////////////////////////*/
+.create-note {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  padding: 0px 0px 0px 0px;
+  background-color: inherit;
+  border-radius: 1px;
+  z-index: 10;
+}
+.new-note-button,
+.tag-organizer-button {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 22px;
+  color: #5e352b;
+  padding: 5px;
+  background: whitesmoke;
+  font-weight: 900;
+}
+.new-note-button {
+  border-right: solid #afd45f 4px;
+  border-radius: 4px 0 0 4px;
+}
+.tag-organizer-button {
+  border-radius: 0 4px 4px 0;
+}
+
+/* TagOrganizer component ////////////////////////////////////////////*/
+.tag-organizer-wrapper {
+  padding: 12px 0 15px 0;
+  z-index: 1;
+}
+
+.tag-organizer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 6px;
+  z-index: 2;
+}
+.tag-organizer .tags-div {
+  display: inline;
+  padding-bottom: 0px;
+}
+.tag-organizer .tag-input-div {
+  padding-bottom: 0px;
+
+  display: inline;
+}
+.tag-organizer-title {
+  text-align: center;
+  background: #92c9e8;
+  margin-bottom: 0px;
+  border-radius: 6px 6px 0 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #5e352b;
+  letter-spacing: normal;
+}
+
+.tag-organizer .cloud-tag {
+  margin-left: 1px;
+  padding: 1px 6px;
+  margin-top: 0px;
+  font-size: 16px;
+}
+
+.directions-span {
+  padding: 1px 6px;
+  margin: 0 4px 0px 6px;
+  background: #6ba953;
+  border-radius: 3px;
+}
+.all-none-button-div {
+  display: inline-block;
+}
+.all-none-button {
+  box-sizing: border-box;
+  margin-left: 3px;
+  margin-right: 1px;
+  border-radius: 3px;
+  font-size: 16px;
+  background: #92c9e8;
+  padding: 1px 6px;
+  height: 21px;
+}
+.tag-organizer-features {
+  padding: 10px 14px 10px 14px;
+}
+.tag-organizer-feature + .tag-organizer-feature {
+  margin: 8px 0 0 0;
+}
+.add-tag-to-notes-div span {
+  vertical-align: middle;
+}
+.input-span {
+  display: inline-block;
+}
+.search-input {
+  background: #ebecec;
+}
+.remove-tag-from-notes-div {
+}
+
+.add-tag-to-notes-div,
+#tag-input {
+  background: #ebecec;
+}
+.add-to-notes-button {
+  padding: 1px 13px;
+  background: #92c9e8;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 3px;
+  margin: 0px 8px 0 3px;
+}
+.pink {
+  background: pink;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 3px 6px;
+}
+
+/* NoteModal Componet ////////////////////////////////////////// */
+
+.modal .cloud-tag {
+  padding: 1px 6px 1px 6px;
+  background: #857c7b;
+  margin: 0 3px 3px 0;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.modal-backdrop {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(0, 0%, 89.8%, 0.75);
+  z-index: 12;
+}
+
+.modal,
+.modal-backdrop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.modal {
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  padding: 60px 50px 40px;
+  z-index: 100;
+}
+.modal-container {
+  position: relative;
+  top: 14vh;
+  width: 100%;
+  max-width: 760px;
+  z-index: 98;
+  box-sizing: border-box;
+  background: #5e352b;
+}
+.modal-hover {
+  color: whitesmoke;
+  margin: 0 auto;
+  text-align: center;
+}
+.modal-container:hover .modal-hover {
+  color: #6ba953;
+}
+
+.edit-form {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 14px 14px 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  /* z-index: 100; */
+  z-index: 99;
+}
+.edit-form input {
+  margin-bottom: 20px;
+}
+.edit-form .modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.edit-form .modal-footer .submit-button {
+  height: 36px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-family: Product Sans, system, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, Segoe UI, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.edit-form .modal-footer .submit-button:focus,
+.edit-form .modal-footer .submit-button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.edit-form .modal-footer .delete-button {
+  width: 35px;
+  padding: 8px;
+  margin-left: -8px;
+  opacity: 0.5;
+}
+.edit-form .modal-footer .delete-button:focus,
+.edit-form .modal-footer .delete-button:hover {
+  opacity: 1;
+}
+
+/* TagsModal component  ////////////////////////////////////////////////*/
+#TagsModalBox {
+  background: #edc4d4;
+  z-index: 150;
+}
+#TagsModal {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 25px 5px 2px;
+  padding-top: 5px;
+  display: flex;
+  max-height: 160px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  z-index: 200;
+  overflow: scroll;
+}
+.tags-modal-tag {
+  width: 100px;
+}
+.tags-modal-tag:hover {
+  background: #afd45f;
+}
+
+@font-face {
+  font-family: Product Sans;
+  src: url(../fonts/ProductSans-BoldItalic.woff2) format("woff2"),
+    url(../fonts/ProductSans-BoldItalic.woff) format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Product Sans;
+  src: url(../fonts/ProductSans-Italic.woff2) format("woff2"),
+    url(../fonts/ProductSans-Italic.woff) format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Product Sans;
+  src: url(../fonts/ProductSans-Bold.woff2) format("woff2"),
+    url(../fonts/ProductSans-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Product Sans;
+  src: url(../fonts/ProductSans-Regular.woff2) format("woff2"),
+    url(../fonts/ProductSans-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.woff2) format("woff2"),
+    url(../fonts/Roboto-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, system, -apple-system, BlinkMacSystemFont, Helvetica Neue,
+    Segoe UI, Arial, sans-serif;
+  font-size: 16px;
+  background: #9896a4;
+  background: #afd45f;
+
+  line-height: 1.5;
+}
+
+body.freeze {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Menlo, monospace;
+  margin-top: 0;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+a,
+button {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  width: 100%;
+  display: block;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+input {
+  font-family: Product Sans, system, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, Segoe UI, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+textarea {
+  font-family: Roboto, system, -apple-system, BlinkMacSystemFont, Helvetica Neue,
+    Segoe UI, Arial, sans-serif;
+  resize: none;
+  line-height: 1.5;
+  min-height: 5em;
+  max-height: 50vh;
+  width: 100%;
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+svg {
+  height: 100%;
+  fill: currentColor;
+}
+
+img,
+svg {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+p,
+pre {
+  margin: 0 0 10px;
+}
+
+.app {
+  padding: 50px 50px;
+}
+
+@media (max-width: 1920px) {
+  .notes {
+    width: 1812px;
+    padding: 6px;
+  }
+  .app {
+    padding: 30px 0 50px 0;
+  }
+}
+@media (max-width: 1830px) {
+  .notes {
+    width: 1452px;
+    padding: 6px;
+
+    margin-bottom: 50px;
+  }
+  .app {
+    padding: 10px 0px 50px 0px;
+  }
+}
+
+@media (max-width: 1441px) {
+  .app {
+    padding: 10px 0 0px 0;
+  }
+  .notes {
+    width: 1440px;
+    margin: 0;
+    padding: 6px 0 0 0;
+  }
+}
+
+@media (max-width: 1438px) {
+  .app {
+    padding: 10px 3px 10px 3px;
+  }
+  .notes {
+    width: 1092px;
+    margin: auto;
+    padding: 6px;
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 1105px) {
+  .app {
+    padding: 0px;
+  }
+  .notes {
+    width: 734px;
+    height: 80vh;
+  }
+  header h1 {
+    font-size: 2.6em;
+  }
+}
+
+@media (max-width: 730px) {
+  .app {
+    padding: 0px;
+    width: 100%;
+  }
+  .notes {
+    width: 100%;
+    border-radius: 0;
+  }
+  .create-note {
+    max-width: 600px;
+    padding: 0;
+    margin: 3px 0 7px 0 auto;
+    /* margin: 5px 0 10px 0; */
+  }
+
+  .note {
+    width: 99%;
+  }
+  .tag-organizer {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .tag-cloud-container {
+    width: 97%;
+  }
+  .modal {
+    padding: 18px 0 0px 0;
+  }
+  .modal-container {
+    top: 2vh;
+  }
+  .tag-organizer-wrapper {
+    padding: 5px 0 0px 0;
+  }
+
+  .tag-organizer-title {
+    border-radius: 0;
+  }
+
+  .notes {
+    padding: 4px 0px 0px 0px;
+    height: 85vh;
+  }
+  .note {
+    margin: 2px 0px 0 2px;
+  }
+  header h1 {
+    margin-bottom: 2px;
+    font-size: 5vw;
+  }
+  .mobile-bottom {
+    height: 24px;
+    background: #92c9e8;
+  }
+}
